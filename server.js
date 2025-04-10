@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 
 const parser = new Parser();
 
-const FEED_URL = "https://nitter.poast.org/DeItaone/rss";
+const FEED_URL = "https://nitter.privacydev.net/DeItaone/rss";
 
 app.use(cors());
 
@@ -20,7 +20,7 @@ app.get("/api/latest-tweet", async (req, res) => {
 
     res.json({ text: latest.title, id: latest.link });
   } catch (err) {
-    console.error("Error fetching RSS feed:", err.message);
+    console.error("Error fetching RSS feed:", err);
     res.status(500).json({ error: "Failed to fetch tweet." });
   }
 });
