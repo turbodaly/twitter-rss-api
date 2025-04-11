@@ -5,9 +5,14 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 3000;
 
-const parser = new Parser();
+const parser = new Parser({
+  headers: {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/117.0 Safari/537.36'
+  }
+});
 
-const FEED_URL = "https://nitter.privacydev.net/DeItaone/rss";
+
+const FEED_URL = "https://lightbrd.com/DeItaone/rss";
 
 app.use(cors());
 
